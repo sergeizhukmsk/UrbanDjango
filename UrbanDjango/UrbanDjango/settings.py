@@ -5,7 +5,7 @@ from pathlib import Path
 # Создайте пути внутри проекта следующим образом: BASE_DIR / 'subdir'
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2', 'task3'))
 
 # Настройки быстрого запуска разработки - непригодны для производства
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task2',  # Запускаемое приложение на Django
+    'task3',  # Запускаемое приложение на Django
 ]
 
 MIDDLEWARE = [
@@ -47,11 +48,17 @@ ROOT_URLCONF = 'UrbanDjango.urls'
 #         'DIRS':[BASE_DIR/'task2/templates/task2/'],
 #         'DIRS':[os.path.join(BASE_DIR, 'task2', 'templates', 'task2')],
 
+# BASE_DIR / 'task2' / 'templates' / 'second_task',
+# BASE_DIR / 'task3' / 'templates' / 'second_task',
+# BASE_DIR / 'task3' / 'templates' / 'third_task'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':[BASE_DIR / 'task2' / 'templates' / 'second_task'],
+        'DIRS':[
+            BASE_DIR / 'task2' / 'templates',
+            BASE_DIR / 'task3' / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
