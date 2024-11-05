@@ -1,0 +1,14 @@
+{% extends 'menu.html' %}
+
+{% block title %}Тестовое приложение на Django - task4{% endblock %}
+
+{% block pagename %}Страница приложения - Корзина -  task4{% endblock %}
+
+{% block menu %}
+{{block.super}}
+{% endblock %}
+
+{% block content %}
+    <p><h3>Извините, ваша корзина пуста.</h3></p>
+{% endblock %}
+

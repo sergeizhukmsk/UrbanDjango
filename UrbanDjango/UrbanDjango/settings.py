@@ -5,7 +5,7 @@ from pathlib import Path
 # Создайте пути внутри проекта следующим образом: BASE_DIR / 'subdir'
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2', 'task3'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2', 'task3', 'task4'))
 
 # Настройки быстрого запуска разработки - непригодны для производства
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task2',  # Запускаемое приложение на Django
     'task3',  # Запускаемое приложение на Django
+    'task4',  # Запускаемое приложение на Django
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[
             BASE_DIR / 'task2' / 'templates',
-            BASE_DIR / 'task3' / 'templates'
+            BASE_DIR / 'task3' / 'templates',
+            BASE_DIR / 'task4' / 'templates' / 'fourth_task'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, 'static')
+]
 
 # Тип поля первичного ключа по умолчанию
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
