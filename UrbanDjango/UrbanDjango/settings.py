@@ -5,7 +5,7 @@ from pathlib import Path
 # Создайте пути внутри проекта следующим образом: BASE_DIR / 'subdir'
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2', 'task3', 'task4'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'task2', 'task3', 'task4', 'task5'))
 
 # Настройки быстрого запуска разработки - непригодны для производства
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'task2',  # Запускаемое приложение на Django
     'task3',  # Запускаемое приложение на Django
     'task4',  # Запускаемое приложение на Django
+    'task5',  # Запускаемое приложение на Django
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,8 @@ TEMPLATES = [
         'DIRS':[
             BASE_DIR / 'task2' / 'templates',
             BASE_DIR / 'task3' / 'templates',
-            BASE_DIR / 'task4' / 'templates' / 'fourth_task'
+            BASE_DIR / 'task4' / 'templates' / 'fourth_task',
+            BASE_DIR / 'task5' / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

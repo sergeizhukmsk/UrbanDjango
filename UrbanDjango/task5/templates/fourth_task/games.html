@@ -1,0 +1,17 @@
+{% extends 'menu.html' %}
+
+{% block title %}Тестовое приложение на Django - task4{% endblock %}
+
+{% block pagename %}Страница приложения - Магазин - task4{% endblock %}
+
+{% block menu %}
+{{block.super}}
+{% endblock %}
+
+{% block content %}
+
+    {% for game in games %}
+        <p>{{game}} <button disabled>Купить</button></p>
+    {% endfor %}
+
+{% endblock %}
